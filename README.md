@@ -108,6 +108,7 @@ Os passos de desenvolvimentos são:
       - O aluguel dever ter duração mínima de 24 horas.
       - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo usuário.
       - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo carro.
+        - O status de disponibilidade do carro alugado dever ser modificado para indisponível (false).
 
   - **Devolução de Carro**
     - Requitos funcionais => RF
