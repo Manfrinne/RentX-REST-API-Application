@@ -47,7 +47,7 @@ class CreateRentalsUseCase {
     const dateNow = this.dateProvider.dateNow();
 
     // O aluguel dever ter duração mínima de 24 horas. Modificar formato para
-    // padrão universal UTC. A biblioteca DateJS faz isso de formal padrão.
+    // padrão universal UTC. A biblioteca DateJS faz isso de forma padrão.
     const compareDates = this.dateProvider.compareInHours(
       dateNow,
       expected_return_date

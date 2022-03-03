@@ -19,8 +19,8 @@ Os passos de desenvolvimentos são:
 
 ### Carro
 
-- [ ] Corrigindo status de um carro
-- [ ] Caso de uso de devolução de carro
+- [x] Corrigindo status de um carro
+- [x] Caso de uso de devolução de carro
 - [ ] Controller de devolução de carro
 - [ ] Listagem de aluguéis do usuário
 - [ ] Refatorando a listagem de aluguel do usuário
@@ -120,6 +120,7 @@ Os passos de desenvolvimentos são:
       - Ao realizar a devolução, deverar ser calculado o total do aluguel.
       - Se estiver em atraso, deverar ser cobrado multa de atraso proporcional.
       - Se houver multa, somar-la ao valor do aluguel.
+      - O Usuário deve estar logado.
 
 ## 🧐 Como contribuir
 
