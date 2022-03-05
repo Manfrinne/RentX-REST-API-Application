@@ -1,4 +1,4 @@
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 import { AppError } from "@shared/errors/AppError";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
@@ -11,9 +11,10 @@ interface IRequest {
   user_id: string;
 }
 
+@injectable()
 class DevolutionRentalUseCase {
   constructor(
-    @inject("RentalRepository")
+    @inject("RentalsRepository")
     private rentalRepository: IRentalsRepository,
     @inject("CarsRepository")
     private carsRepository: ICarsRepository,
@@ -23,7 +24,7 @@ class DevolutionRentalUseCase {
 
   async execute({ id, user_id }: IRequest): Promise<Rental> {
     const rental = await this.rentalRepository.findById(id);
-    const car = await this.carsRepository.findById(id);
+    const car = await this.carsRepository.findById(rental.car_id);
     const minimun_daily = 1;
 
     if (!rental) {
@@ -38,7 +39,7 @@ class DevolutionRentalUseCase {
       this.dateProvider.dateNow()
     );
 
-    // Se devolução em menos de 24hrs garantir diária mínima
+    // Se devolução em menos de 24hrs, garantir diária mínima
     if (daily <= 0) daily = minimun_daily;
 
     // Verificar se houve atraso na devolução
@@ -63,7 +64,7 @@ class DevolutionRentalUseCase {
     rental.total = total;
 
     await this.rentalRepository.create(rental);
-    await this.carsRepository.updateAvailable(id, true);
+    await this.carsRepository.updateAvailable(car.id, true);
 
     return rental;
   }

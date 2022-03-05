@@ -3,7 +3,7 @@
 <br>
 <br>
 
-# API DE ALUGUEL DE VEÍCULOS - BOOTCAMP IGNITE NODEJS
+# API DE ALUGUEL DE VEÍCULOS - BOOTCAMP IGNITE NODEJS CAP IV
 
 </div>
 
@@ -21,7 +21,7 @@ Os passos de desenvolvimentos são:
 
 - [x] Corrigindo status de um carro
 - [x] Caso de uso de devolução de carro
-- [ ] Controller de devolução de carro
+- [x] Controller de devolução de carro
 - [ ] Listagem de aluguéis do usuário
 - [ ] Refatorando a listagem de aluguel do usuário
 - [ ] Criando documentação com autenticação em categoria
