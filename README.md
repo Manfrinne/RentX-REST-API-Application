@@ -22,8 +22,8 @@ Os passos de desenvolvimentos são:
 - [x] Corrigindo status de um carro
 - [x] Caso de uso de devolução de carro
 - [x] Controller de devolução de carro
-- [ ] Listagem de aluguéis do usuário
-- [ ] Refatorando a listagem de aluguel do usuário
+- [x] Listagem de aluguéis do usuário
+- [x] Refatorando a listagem de aluguel do usuário
 - [ ] Criando documentação com autenticação em categoria
 - [ ] Replicando autenticação para a documentaçao
 - [ ] Documentação para upload de imagens do carro
@@ -111,6 +111,7 @@ Os passos de desenvolvimentos são:
         - O status de disponibilidade do carro alugado dever ser modificado para indisponível (false).
 
   - **Devolução de Carro**
+
     - Requitos funcionais => RF
       - Deve ser possível realizar a devolução de um carro.
     - Regras de negócio => RN
@@ -121,6 +122,13 @@ Os passos de desenvolvimentos são:
       - Se estiver em atraso, deverar ser cobrado multa de atraso proporcional.
       - Se houver multa, somar-la ao valor do aluguel.
       - O Usuário deve estar logado.
+
+  - **Listagem de alugueis para usuários**
+
+    - Requitos funcionais => RF
+      - Deve ser possível realizar a busca de todos os alugueis para o usuário.
+    - Regras de negócio => RN
+      - O Usuário deve estar logado na aplicação.
 
 ## 🧐 Como contribuir
 
