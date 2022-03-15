@@ -9,11 +9,54 @@
     }
   },
   "paths": {
+    "/sessions": {
+      "post": {
+        "tags": [
+          "Sessions"
+        ],
+        "summary": "Authentication user",
+        "description": "Authentication user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "default": "admin@rentx.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "default": "admin"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Email or password incorrect"
+          }
+        }
+      }
+    },
     "/categories": {
       "post": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "Create a category",
         "description": "Create a new category description",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -45,7 +88,9 @@
         }
       },
       "get": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "List categories",
         "description": "List all categories",
         "responses": {
@@ -75,7 +120,9 @@
     },
     "/categories/import": {
       "post": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "Upload a new category",
         "description": "Upload a new category with CSV file",
         "requestBody": {
@@ -102,7 +149,9 @@
     },
     "/specifications": {
       "post": {
-        "tags": ["Specifications"],
+        "tags": [
+          "Specifications"
+        ],
         "summary": "Create a specification",
         "description": "Create a new specification",
         "requestBody": {
@@ -135,6 +184,15 @@
         "description": {
           "type": "string"
         }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }
