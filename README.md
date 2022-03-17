@@ -24,10 +24,10 @@ Os passos de desenvolvimentos são:
 - [x] Controller de devolução de carro
 - [x] Listagem de aluguéis do usuário
 - [x] Refatorando a listagem de aluguel do usuário
-- [ ] Criando documentação com autenticação em categoria
-- [ ] Replicando autenticação para a documentaçao
-- [ ] Documentação para upload de imagens do carro
-- [ ] Correção dos testes
+- [x] Criando documentação com autenticação em categoria
+- [x] Replicando autenticação para a documentaçao
+- [x] Documentação para upload de imagens do carro
+- [x] Correção dos testes
 
 ### Autenticação
 
