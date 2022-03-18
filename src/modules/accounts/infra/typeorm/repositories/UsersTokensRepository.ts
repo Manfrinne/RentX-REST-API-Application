@@ -4,7 +4,7 @@ import { getRepository, Repository } from "typeorm";
 
 import { UserTokens } from "../entities/UserTokens";
 
-class UsersTokenRepository implements IUsersTokensRepository {
+class UsersTokensRepository implements IUsersTokensRepository {
   private repository: Repository<UserTokens>;
 
   constructor() {
@@ -28,4 +28,4 @@ class UsersTokenRepository implements IUsersTokensRepository {
   }
 }
 
-export { UsersTokenRepository };
+export { UsersTokensRepository };
