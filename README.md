@@ -31,7 +31,7 @@ Os passos de desenvolvimentos são:
 
 ### Autenticação
 
-- [ ] Refresh Token
+- [x] Refresh Token
 - [ ] Repositório de Refresh token
 - [ ] Refatorando Autenticação do usuário
 - [ ] Criando caso de uso do refresh token
@@ -59,76 +59,75 @@ Os passos de desenvolvimentos são:
   - Requitos não funcionais => RNF
     - Não se aplica.
   - Regras de negócio => RN
-
     - Não deve ser possível cadastrar um carro com uma placa já existente.
     - O carro deve ser cadastrado, por padrão, como disponível.
     - Somente usuários administradores podem fazer o cadastro de carros.
 
-  - **Listagem de Carro**
+- **Listagem de Carro**
 
-    - Requitos funcionais => RF
-      - Deve ser possível listar todos os carros disponíveis.
-      - Dever ser possível listar todos os carros disponíveis pela categoria.
-      - Dever ser possível listar todos os carros disponíveis pela marca.
-      - Dever ser possível listar todos os carros disponíveis pelo nome do carro.
-    - Requitos não funcionais => RNF
-      - Não se aplica.
-    - Regras de negócio => RN
-      - Não é necessário estar logado para acessar a listagem de carros.
+  - Requitos funcionais => RF
+    - Deve ser possível listar todos os carros disponíveis.
+    - Dever ser possível listar todos os carros disponíveis pela categoria.
+    - Dever ser possível listar todos os carros disponíveis pela marca.
+    - Dever ser possível listar todos os carros disponíveis pelo nome do carro.
+  - Requitos não funcionais => RNF
+    - Não se aplica.
+  - Regras de negócio => RN
+    - Não é necessário estar logado para acessar a listagem de carros.
 
-  - **Cadastro de Especificação no carro**
+- **Cadastro de Especificação no carro**
 
-    - Requitos funcionais => RF
-      - Deve ser possível cadatrar uma especificação para um carro.
-    - Requitos não funcionais => RNF
-      - Não se aplica.
-    - Regras de negócio => RN
-      - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
-      - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-      - Somente usuários administradores podem fazer o cadastro de especificações.
+  - Requitos funcionais => RF
+    - Deve ser possível cadatrar uma especificação para um carro.
+  - Requitos não funcionais => RNF
+    - Não se aplica.
+  - Regras de negócio => RN
+    - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
+    - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
+    - Somente usuários administradores podem fazer o cadastro de especificações.
 
-  - **Cadastro de Imagens do carro**
+- **Cadastro de Imagens do carro**
 
-    - Requitos funcionais => RF
-      - Deve ser possível cadatrar uma imagem do carro.
-    - Requitos não funcionais => RNF
-      - Utilizar o Multer para upload dos arquivos.
-    - Regras de negócio => RN
-      - O usuário deve poder cadastrar várias imagens para o mesmo carro.
-      - Somente usuários administradores podem fazer o cadastro de imagens.
+  - Requitos funcionais => RF
+    - Deve ser possível cadatrar uma imagem do carro.
+  - Requitos não funcionais => RNF
+    - Utilizar o Multer para upload dos arquivos.
+  - Regras de negócio => RN
+    - O usuário deve poder cadastrar várias imagens para o mesmo carro.
+    - Somente usuários administradores podem fazer o cadastro de imagens.
 
-  - **Aluguel de carro**
+- **Aluguel de carro**
 
-    - Requitos funcionais => RF
-      - Deve ser possível cadastrar um aluguel de carro.
-    - Requitos não funcionais => RNF
-      - Não se aplica.
-    - Regras de negócio => RN
-      - O usuário deve estar logado na aplicação para poder alugar algum carro.
-      - O aluguel dever ter duração mínima de 24 horas.
-      - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo usuário.
-      - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo carro.
-        - O status de disponibilidade do carro alugado dever ser modificado para indisponível (false).
+  - Requitos funcionais => RF
+    - Deve ser possível cadastrar um aluguel de carro.
+  - Requitos não funcionais => RNF
+    - Não se aplica.
+  - Regras de negócio => RN
+    - O usuário deve estar logado na aplicação para poder alugar algum carro.
+    - O aluguel dever ter duração mínima de 24 horas.
+    - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo usuário.
+    - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo carro.
+      - O status de disponibilidade do carro alugado dever ser modificado para indisponível (false).
 
-  - **Devolução de Carro**
+- **Devolução de Carro**
 
-    - Requitos funcionais => RF
-      - Deve ser possível realizar a devolução de um carro.
-    - Regras de negócio => RN
-      - Se o carro for devolvido antes de 24hrs, a diária deve ser cobrada normalmente.
-      - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
-      - Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
-      - Ao realizar a devolução, deverar ser calculado o total do aluguel.
-      - Se estiver em atraso, deverar ser cobrado multa de atraso proporcional.
-      - Se houver multa, somar-la ao valor do aluguel.
-      - O Usuário deve estar logado.
+  - Requitos funcionais => RF
+    - Deve ser possível realizar a devolução de um carro.
+  - Regras de negócio => RN
+    - Se o carro for devolvido antes de 24hrs, a diária deve ser cobrada normalmente.
+    - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
+    - Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
+    - Ao realizar a devolução, deverar ser calculado o total do aluguel.
+    - Se estiver em atraso, deverar ser cobrado multa de atraso proporcional.
+    - Se houver multa, somar-la ao valor do aluguel.
+    - O Usuário deve estar logado.
 
-  - **Listagem de alugueis para usuários**
+- **Listagem de alugueis para usuários**
 
-    - Requitos funcionais => RF
-      - Deve ser possível realizar a busca de todos os alugueis para o usuário.
-    - Regras de negócio => RN
-      - O Usuário deve estar logado na aplicação.
+  - Requitos funcionais => RF
+    - Deve ser possível realizar a busca de todos os alugueis para o usuário.
+  - Regras de negócio => RN
+    - O Usuário deve estar logado na aplicação.
 
 ## 🧐 Como contribuir
 
