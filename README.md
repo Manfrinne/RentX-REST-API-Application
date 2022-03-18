@@ -32,7 +32,7 @@ Os passos de desenvolvimentos são:
 ### Autenticação
 
 - [x] Refresh Token
-- [ ] Repositório de Refresh token
+- [x] Repositório de Refresh token
 - [ ] Refatorando Autenticação do usuário
 - [ ] Criando caso de uso do refresh token
 - [ ] Controller refresh token
