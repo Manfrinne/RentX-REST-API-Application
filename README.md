@@ -39,7 +39,7 @@ Os passos de desenvolvimentos são:
 
 ### Recuperação de senha
 
-- [ ] Criando caso de uso
+- [x] Criando caso de uso
 - [ ] Criando provider de e-mail
 - [ ] Inserindo template engine para envio de e-mail
 - [ ] Caso de uso de reset de senha
@@ -128,6 +128,16 @@ Os passos de desenvolvimentos são:
     - Deve ser possível realizar a busca de todos os alugueis para o usuário.
   - Regras de negócio => RN
     - O Usuário deve estar logado na aplicação.
+
+- **Recuperar senha**
+
+  - Requitos funcionais => RF
+    - Deve ser possível o usuário recuperar a senha informando o Email.
+    - O usuário deve reconhecer o Email com o passo a passo para a recuperação da senha.
+    - O usuário deve conseguir inserir uma nova senha.
+  - Regras de negócio => RN
+    - O usuário precisa informar uma nova senha.
+    - O link enviado para a recuperação deve expirar em 3 horas.
 
 ## 🧐 Como contribuir
 
