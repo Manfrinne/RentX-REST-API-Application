@@ -34,7 +34,7 @@ Os passos de desenvolvimentos são:
 - [x] Refresh Token
 - [x] Repositório de Refresh token
 - [x] Refatorando Autenticação do usuário
-- [ ] Criando caso de uso do refresh token
+- [x] Criando caso de uso do refresh token
 - [ ] Controller refresh token
 
 ### Recuperação de senha

@@ -13,7 +13,7 @@ import { User } from "./User";
 @Entity("users_tokens")
 class UserTokens {
   @PrimaryColumn()
-  id: String;
+  id: string;
 
   @Column()
   refresh_token: string;
