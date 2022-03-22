@@ -40,7 +40,7 @@ Os passos de desenvolvimentos são:
 ### Recuperação de senha
 
 - [x] Criando caso de uso
-- [ ] Criando provider de e-mail
+- [x] Criando provider de e-mail
 - [ ] Inserindo template engine para envio de e-mail
 - [ ] Caso de uso de reset de senha
 
