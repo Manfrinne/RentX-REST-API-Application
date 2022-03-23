@@ -42,7 +42,7 @@ Os passos de desenvolvimentos são:
 - [x] Criando caso de uso
 - [x] Criando provider de e-mail
 - [x] Inserindo template engine para envio de e-mail
-- [ ] Caso de uso de reset de senha
+- [x] Caso de uso de reset de senha
 
 ### Testes
 
