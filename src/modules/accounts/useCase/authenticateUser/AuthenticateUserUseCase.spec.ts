@@ -3,24 +3,35 @@ import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
 import { UsersRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersRepositoryInMemory";
 import { CreateUserUseCase } from "@modules/accounts/useCase/createUser/CreateUserUseCase";
 import { AuthenticaUserUseCase } from "./AuthenticateUserUseCase";
+import { UsersTokensRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersTokensRepositoryInMemory";
+import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider";
 
 let authenticaUserUseCase: AuthenticaUserUseCase;
 let usersRepositoryInMemory: UsersRepositoryInMemory;
 let createUserUseCase: CreateUserUseCase;
+let usersTokensRepositoryInMemory: UsersTokensRepositoryInMemory;
+let dateProvider: DayjsDateProvider;
 
 describe("Authenticate User", () => {
   beforeEach(() => {
     usersRepositoryInMemory = new UsersRepositoryInMemory();
-    authenticaUserUseCase = new AuthenticaUserUseCase(usersRepositoryInMemory);
+    dateProvider = new DayjsDateProvider();
+    usersTokensRepositoryInMemory = new UsersTokensRepositoryInMemory()
+    authenticaUserUseCase = new AuthenticaUserUseCase(
+      usersRepositoryInMemory,
+      usersTokensRepositoryInMemory,
+      dateProvider
+    );
     createUserUseCase = new CreateUserUseCase(usersRepositoryInMemory);
   });
 
   it("Should be able to authenticate an user", async () => {
+
     const user: ICreateUserDTO = {
-      driver_license: "000123",
-      email: "user@test.com",
+      driver_license: "999999",
+      email: "user@testError.com",
+      name: "User Test Error",
       password: "1234",
-      name: "User Test",
     };
 
     await createUserUseCase.execute(user);
@@ -46,8 +57,8 @@ describe("Authenticate User", () => {
     const user: ICreateUserDTO = {
       driver_license: "999999",
       email: "user@testError.com",
-      password: "1234",
       name: "User Test Error",
+      password: "1234",
     };
 
     await createUserUseCase.execute(user);

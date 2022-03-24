@@ -33,7 +33,7 @@ describe("List Category Controller", () => {
       password: "admin",
     });
 
-    const { token } = reponseToken.body;
+    const { refresh_token } = reponseToken.body;
 
     await request(app)
       .post("/categories")
@@ -41,7 +41,7 @@ describe("List Category Controller", () => {
         name: "Category supertest Name Test01",
         description: "Category supertest Description Test01",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     await request(app)
       .post("/categories")
@@ -49,7 +49,7 @@ describe("List Category Controller", () => {
         name: "Category supertest Name Test02",
         description: "Category supertest Description Test02",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     await request(app)
       .post("/categories")
@@ -57,7 +57,7 @@ describe("List Category Controller", () => {
         name: "Category supertest Name Test03",
         description: "Category supertest Description Test03",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     const response = await request(app).get("/categories");
 

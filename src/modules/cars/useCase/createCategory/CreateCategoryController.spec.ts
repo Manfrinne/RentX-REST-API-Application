@@ -33,7 +33,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    const { token } = reponseToken.body;
+    const { refresh_token } = reponseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -41,7 +41,7 @@ describe("Create Category Controller", () => {
         name: "Category supertest Name Test01",
         description: "Category supertest Description Test01",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     expect(response.status).toBe(201);
   });
@@ -52,7 +52,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    const { token } = reponseToken.body;
+    const { refresh_token } = reponseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -60,7 +60,7 @@ describe("Create Category Controller", () => {
         name: "Category supertest Name Test01",
         description: "Category supertest Description Test01",
       })
-      .set({ Authorization: `Bearer ${token}` });
+      .set({ Authorization: `Bearer ${refresh_token}` });
 
     expect(response.status).toBe(400);
   });
