@@ -46,9 +46,9 @@ Os passos de desenvolvimentos são:
 
 ### Testes
 
-- [ ] Refatorando testes
-- [ ] Testando envio de e-mail
-- [ ] Coverage Report
+- [x] Refatorando testes
+- [x] Testando envio de e-mail
+- [x] Coverage Report
 
 ## Requisitos da aplicação:
 
