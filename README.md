@@ -3,7 +3,7 @@
 <br>
 <br>
 
-# API DE ALUGUEL DE VEÍCULOS - BOOTCAMP IGNITE NODEJS CAP IV
+# API DE ALUGUEL DE VEÍCULOS - BOOTCAMP IGNITE NODEJS CAP V
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 🚗 Sobre o projeto
 
-Nesse módulo damos continuidade a nossa API de aluguel de veículos. Vamos implementar a funcionalidade de realização de pagamentos, de envio de email para recuperação de senha e outras coisas.
+Nesse capítulo vamos concluir as funcionalidades da nossa aplicação, aprender como utilizar refresh_token da nossa aplicação e como enviar e-mail, utilizando a biblioteca nodemailer.
 
 ## 💻Tópicos abordados no módulo
 
