@@ -9,14 +9,23 @@ Nese capítulo vamos aprender como fazer o deploy da nossa aplicação em produ�
 ## 💻Tópicos abordados no módulo
 
 ### DEPLOY
+
 - [x] Refresh Token
 - [ ] Configuração AWS
+  - [x] Criar conta na AWS
+  - [x] Criação do usuário e S3
+  - [x] Provider de Upload
+  - [ ] Upload utilizando S3
+  - [ ] Criando URL de acesso do avatar
+  - [ ] Configurando o e-mail em produção
+  - [ ] Criando provider do SESMail
 - [ ] Preparando deploy
 - [ ] Deploy
 - [ ] CI/CD
 - [ ] Segurança
 
 ### SERVELESS
+
 - [ ] Serveless
 - [ ] Microsserviços
 
