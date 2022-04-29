@@ -15,7 +15,7 @@ Nese capítulo vamos aprender como fazer o deploy da nossa aplicação em produ�
   - [x] Criar conta na AWS
   - [x] Criação do usuário e S3
   - [x] Provider de Upload
-  - [ ] Upload utilizando S3
+  - [x] Upload utilizando S3
   - [ ] Criando URL de acesso do avatar
   - [ ] Configurando o e-mail em produção
   - [ ] Criando provider do SESMail
