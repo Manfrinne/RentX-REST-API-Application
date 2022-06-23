@@ -1,0 +1,311 @@
+
+Chapter 2 ----------------
+
+## Typescript
+
+- Introdução TypeScript
+- Criando projeto com typescript
+- Adicionando os tipos
+- Definindo os parâmetros obrigatórios
+
+## Criando a API com NodeJS
+
+ - Configurando ts-node-dev
+ - ESLint e Prettier
+ - Debugando a aplicação
+ - Criando categoria
+ - Inserindo ID com uuid
+ - Inserindo tipagem para categoria
+ - Criando repositório de categoria
+ - Listando as categorias
+ - Validando o cadastro de categoria
+
+## S.O.L.I.D
+
+- Entendendo o S.O.L.I.D
+- Utilizando o Princípio de Responsabilidade Única (SRP)
+- Utilizando o Princípio da Substituição de Liskov (LSP)
+
+## Continuação da aplicação
+
+- Criando service de especificação e separando em módulos
+- Corrigindo as importações
+- Criando repositório de especificação
+- Criando os Use Case de Categoria
+- Refatorando a listagem de categoria
+- Conhecendo Singleton Pattern
+- Separando os repositórios
+- Criando use case de especificação
+- Refatorando as rotas
+
+## Trabalhando com Upload
+
+- Conhecendo o multer
+- Criando upload de arquivos
+- Criando o use case para importar categorias
+- Conhecendo o conceito de stream
+- Fala Dev
+- Lendo os dados do upload
+- Inserindo os dados do upload no repositório
+- Iniciando a documentação
+
+## Iniciando a documentação
+
+- Conhecendo o swagger
+- Configurando o swagger
+- Criando a documentação de criação de categoria
+- Criando documentação da listagem de categorias
+- Removendo os arquivos de upload
+
+Chapter 3 -----------------
+
+Daremos início à nossa aplicação principal criando a base do app com autenticação, cadastro, upload de avatar, etc. utilizando um banco de dados relacional e conheceremos conceitos e ferramentas como Docker, TypeORM, JWT e bcrypt.
+
+## Continuando a aplicação
+
+- Conhecendo o Docker
+- Documentação de instalação do docker
+- O que é o docker?
+- Criando nosso primeiro container e Dockerfile
+- Usando docker-compose
+- Comandos do docker
+
+## Trabalhando com Banco de Dados
+
+- Conhecendo as formas de usar o banco de dados
+- Instalando o TypeORM
+- Criando container do postgres
+- Refatoração com network_mode e reload
+- Aprendendo o conceito de migrations
+- Criando migration de categoria
+- Refatorando o model de categoria
+- Alterando o Repositório de categoria
+- Refatorando o caso de uso de categoria
+- Entendendo as alterações
+
+## Injeção de dependência
+
+- Conhecendo TSyringe
+- Refatorando as especificações
+- Criando migration de especificação
+- Continuação da documentação
+
+## Usuário
+
+- Criando repositório de usuário
+- Criando controller de usuário
+- Alterar tabela de usuário
+- Criando migration de usuário
+- Criptografrar senha
+- Entendendo autenticação com JWT
+- Criando token do usuário
+- Autenticação nas rotas
+- Tratamento de exceções
+
+## Avatar de usuário
+
+- Adicionando coluna de avatar
+- Upload de avatar
+- Remover arquivo de avatar existente
+
+Chapter 4 -----------------
+
+## Testes
+ 
+- Conhecendo os tipos de testes
+- Criando o primeiro teste
+- Teste de criação de categoria
+- Teste de autenticação do usuário
+- Imports da aplicação
+- Corrigindo as importações
+- Refatorando a aplicação
+ 
+## Requisitos
+
+- Escrevendo os requisitos da aplicação
+
+  - **Cadastro de Carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível cadatrar um novo carro.
+    - Requitos não funcionais => RNF
+      - Não se aplica.
+    - Regras de negócio => RN
+      - Não deve ser possível cadastrar um carro com uma placa já existente.
+      - O carro deve ser cadastrado, por padrão, como disponível.
+      - Somente usuários administradores podem fazer o cadastro de carros.
+
+  - **Listagem de Carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível listar todos os carros disponíveis.
+      - Dever ser possível listar todos os carros disponíveis pela categoria.
+      - Dever ser possível listar todos os carros disponíveis pela marca.
+      - Dever ser possível listar todos os carros disponíveis pelo nome do carro.
+    - Requitos não funcionais => RNF
+      - Não se aplica.
+    - Regras de negócio => RN
+      - Não é necessário estar logado para acessar a listagem de carros.
+
+  - **Cadastro de Especificação no carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível cadatrar uma especificação para um carro.
+    - Requitos não funcionais => RNF
+      - Não se aplica.
+    - Regras de negócio => RN
+      - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
+      - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
+      - Somente usuários administradores podem fazer o cadastro de especificações.
+
+  - **Cadastro de Imagens do carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível cadatrar uma imagem do carro.
+    - Requitos não funcionais => RNF
+      - Utilizar o Multer para upload dos arquivos.
+    - Regras de negócio => RN
+      - O usuário deve poder cadastrar várias imagens para o mesmo carro.
+      - Somente usuários administradores podem fazer o cadastro de imagens.
+
+  - **Aluguel de carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível cadastrar um aluguel de carro.
+    - Requitos não funcionais => RNF
+      - Não se aplica.
+    - Regras de negócio => RN
+      - O usuário deve estar logado na aplicação para poder alugar algum carro.
+      - O aluguel dever ter duração mínima de 24 horas.
+      - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo usuário.
+      - Não deve ser possível cadastrar um alguel caso já houver outro em aberto para o mesmo carro.
+        - O status de disponibilidade do carro alugado dever ser modificado para indisponível (false).
+
+  - **Devolução de Carro**
+
+    - Requitos funcionais => RF
+      - Deve ser possível realizar a devolução de um carro.
+    - Regras de negócio => RN
+      - Se o carro for devolvido antes de 24hrs, a diária deve ser cobrada normalmente.
+      - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
+      - Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
+      - Ao realizar a devolução, deverar ser calculado o total do aluguel.
+      - Se estiver em atraso, deverar ser cobrado multa de atraso proporcional.
+      - Se houver multa, somar-la ao valor do aluguel.
+      - O Usuário deve estar logado.
+
+  - **Listagem de alugueis para usuários**
+
+    - Requitos funcionais => RF
+      - Deve ser possível realizar a busca de todos os alugueis para o usuário.
+    - Regras de negócio => RN
+      - O Usuário deve estar logado na aplicação.
+
+  - **Recuperar senha**
+
+    - Requitos funcionais => RF
+      - Deve ser possível o usuário recuperar a senha informando o Email.
+      - O usuário deve reconhecer o Email com o passo a passo para a recuperação da senha.
+      - O usuário deve conseguir inserir uma nova senha.
+    - Regras de negócio => RN
+      - O usuário precisa informar uma nova senha.
+      - O link enviado para a recuperação deve expirar em 3 horas.
+
+## Carros
+
+- Alterando a importação dos repositórios
+- Criando migrations do carro
+
+## TDD na prática
+
+- Continuando o caso de uso de carros
+- Estruturando a entidade de carros
+- Criando seed de usuário
+- Criando middleware de administrador
+- Listando carros disponíveis
+- Continuação da listagem de carros disponíveis
+- Criando migrations especificação de carros(Many to Many)
+- Caso de uso do cadastro de especificação para carro
+- Continuação dos CreateCarSpecificationUseCase
+- Finalizando CreateCarSpecificationUseCase
+- Criando migrations de imagens de carro
+- Caso de uso do cadastro de imagens do carro
+
+## Aluguel
+
+- Criando migrations do aluguel
+- Criando os testes do aluguel
+- Continuação do cadastro de aluguel
+- Trabalhando com datas com dayjs
+- Criando provider para data
+- Criando controller
+
+## Testes de integração
+
+- Configurando supertest
+- Criando o primeiro teste de integração
+- Continuando teste de integração
+- Criando teste de listagem de categorias
+
+
+Chapter 5 -----------------
+
+Nesse capítulo vamos concluir as funcionalidades da nossa aplicação, aprender como utilizar refresh_token da nossa aplicação e como enviar e-mail, utilizando a biblioteca nodemailer.
+
+### Carro
+
+- [x] Corrigindo status de um carro
+- [x] Caso de uso de devolução de carro
+- [x] Controller de devolução de carro
+- [x] Listagem de aluguéis do usuário
+- [x] Refatorando a listagem de aluguel do usuário
+- [x] Criando documentação com autenticação em categoria
+- [x] Replicando autenticação para a documentaçao
+- [x] Documentação para upload de imagens do carro
+- [x] Correção dos testes
+
+### Autenticação
+
+- [x] Refresh Token
+- [x] Repositório de Refresh token
+- [x] Refatorando Autenticação do usuário
+- [x] Criando caso de uso do refresh token
+- [x] Controller refresh token
+
+### Recuperação de senha
+
+- [x] Criando caso de uso
+- [x] Criando provider de e-mail
+- [x] Inserindo template engine para envio de e-mail
+- [x] Caso de uso de reset de senha
+
+### Testes
+
+- [x] Refatorando testes
+- [x] Testando envio de e-mail
+- [x] Coverage Report
+
+Chapter 6 -----------------
+
+### DEPLOY
+
+Nesse capítulo vamos aprender como fazer o deploy da nossa aplicação em produção, utilizando CI/CD para automatizar o deploy.
+
+- [x] Refresh Token
+- [ ] Configuração AWS
+  - [x] Criar conta na AWS
+  - [x] Criação do usuário e S3
+  - [x] Provider de Upload
+  - [x] Upload utilizando S3
+  - [x] Criando URL de acesso do avatar
+  - [ ] Configurando o e-mail em produção
+  - [ ] Criando provider do SESMail
+- [ ] Preparando deploy
+- [ ] Deploy
+- [ ] CI/CD
+- [ ] Segurança
+
+### SERVELESS
+
+- [ ] Serveless
+- [ ] Microsserviços
