@@ -43,16 +43,12 @@ class AuthenticaUserUseCase {
       expires_refresh_token_days,
     } = auth;
 
-    // Verificar se usuário existe
     const user = await this.usersRepository.findByEmail(email);
-    if (!user) {
-      throw new AppError("Email or password incorrect!");
-    }
+    if (!user) throw new AppError("Email or password incorrect!");
+
 
     const passwordMatch = await compare(password, user.password);
-    if (!passwordMatch) {
-      throw new AppError("Email or password incorrect!");
-    }
+    if (!passwordMatch) throw new AppError("Email or password incorrect!");
 
     const token = sign({}, secret_token, {
       subject: user.id,
@@ -77,7 +73,10 @@ class AuthenticaUserUseCase {
 
     const tokenReturn: IResponse = {
       token,
-      user: { name: user.name, email: user.email },
+      user: {
+        name: user.name,
+        email: user.email
+      },
       refresh_token,
     };
 

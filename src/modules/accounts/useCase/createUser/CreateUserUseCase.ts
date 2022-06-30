@@ -18,13 +18,14 @@ class CreateUserUseCase {
     password,
     driver_license,
   }: ICreateUserDTO): Promise<void> {
-    // Verificar se usuário já existe
-    const userAlreadExists = await this.usersRepository.findByEmail(email);
-    if (userAlreadExists) {
-      throw new AppError("User already exists!");
-    }
 
-    // Criptografar senha
+    const userAlreadExists = await this.usersRepository.findByEmail(email);
+    if (userAlreadExists) throw new AppError("User already exists!");
+
+    const userDriver_license = await this.usersRepository.findByDriver_license(driver_license)
+    if (userDriver_license) throw new AppError("Driver License already register!");
+
+
     const passwordHash = await hash(password, 8);
 
     await this.usersRepository.create({

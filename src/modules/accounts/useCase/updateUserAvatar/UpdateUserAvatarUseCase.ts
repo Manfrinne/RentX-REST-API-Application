@@ -22,9 +22,7 @@ class UpdateUserAvatarUseCase {
     const user = await this.usersRepository.findById(user_id);
 
     // Deletar um avatar existente, se houver
-    if (user.avatar) {
-      await this.storageProvider.delete(user.avatar, "avatar")
-    }
+    if (user.avatar) await this.storageProvider.delete(user.avatar, "avatar")
 
     await this.storageProvider.save(avatar_file, "avatar");
 
