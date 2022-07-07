@@ -23,7 +23,7 @@
 
 ## 👨🏻‍💻 Sobre O projeto
 
-O Proffy é uma plataforma de estudos online que ajuda pessoas a encontrarem professores na internet.
+A nossa RENTX é uma maneira simples e fácil de gerenciar aplicações de aluguel de veículos 🚗
 
 ## 🚀 Tecnologias:
 
